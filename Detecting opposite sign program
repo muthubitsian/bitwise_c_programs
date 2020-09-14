@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int check_result(int x,int y)
+{
+    
+    return((x^y)<0);
+}
+
+
+int main(){
+    int x=100;
+    int y=-100;
+    int result;
+    result=check_result(x,y);
+    
+    if(result)
+    printf("opposite sign");
+    else
+    printf("same sign");
+    
+    return 0;
+}
