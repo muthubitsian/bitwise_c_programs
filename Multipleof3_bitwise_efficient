@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+int main()
+{
+    int count_even_pos_1=0;
+    int count_odd_pos_1=0;
+    int n;
+    int difference_1;
+    int i=0;
+    printf("enter the number: ");
+    scanf("%d",&n);
+    
+    while(n!=0)
+    {
+        if(n%2==1&&i%2==0)
+        count_even_pos_1++;
+        else if(n%2==1&&i%2==1)
+        count_odd_pos_1++;
+        n=n/2;
+        i++;
+    }
+    difference_1=count_even_pos_1-count_odd_pos_1;
+    if(difference_1<0)
+    difference_1=difference_1*(-1);
+    if(difference_1%3==0)
+    printf("multiple of 3");
+    else
+    printf("not a multiple of 3");
+    
+    
+    
+    return 0;
+    
+}
