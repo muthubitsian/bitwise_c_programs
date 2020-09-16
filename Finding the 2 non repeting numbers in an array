@@ -2,18 +2,34 @@
 
 void print_ditict(int a[],int size)
 {
+int res1=0;
+int j=0;
 int res=0;
 int x=0,y=0;
 for(int i=0;i<size;i++)
 {
     res=res^a[i];
 }
-
-res=res&(~res);
+int temp=res;
+while(temp)
+{
+    if(temp%2==0)
+    {
+        j++;
+        temp=temp/2;
+        continue;
+    }
+    else
+    {
+        res1=1<<j;
+        break;
+        
+    }
+}
 
 for(int i=0;i<size;i++)
 {
-    if(a[i]&res)
+    if(a[i]&res1)
     x=x^a[i];
     else
     y=y^a[i];
