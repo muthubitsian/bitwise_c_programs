@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+void print_ditict(int a[],int size)
+{
+int res=0;
+int x=0,y=0;
+for(int i=0;i<size;i++)
+{
+    res=res^a[i];
+}
+
+res=res&(~res);
+
+for(int i=0;i<size;i++)
+{
+    if(a[i]&res)
+    x=x^a[i];
+    else
+    y=y^a[i];
+}
+    
+    printf("%d %d",x,y);
+}
+
+int main()
+{
+    int a[6]={7,1,1,2,2,3};
+    print_ditict(a,6);
+    return 0;
+}
